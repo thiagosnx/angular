@@ -1,0 +1,15 @@
+<div class="class">
+    <h2>Two Way (autocomplete)</h2>
+    <form>
+        <input type="text"
+         [(ngModel)] = "name"
+         name = "name"
+         placeholder="name">
+         <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <div *ngIf="name !== ''">
+        <p>O nome é: {{ name }}</p>
+    </div>
+   
+</div>
