@@ -23,8 +23,9 @@ export class ListRenderComponent {
   }
 
   removeAnimal(animal: Animal){
-    console.log("ok")
-    this.animals = this.listService.remove(this.animals,animal);
+    this.animals = this.animals.filter((a) => animal.name !== a.name); //exclui so no front, é preciso para n precisar recarregar a pag
+    this.listService.remove(animal.id).subscribe();//exclui de verdade (delete)
+    //todas requisições precisam do .subscribe()
   }
 
   getAnimals(): void {
